@@ -21,7 +21,7 @@
 # print("b: ", b)
 # # print("c: ", c)
 #
-# print("Текст в локальном репозитории")
+print("Текст в локальном репозитории")
 
 # print("Код написан на новом устройстве")
 
@@ -36,8 +36,8 @@
 # print(f.closed)
 
 
-f = open("text.txt")
-print(f.read(3))
-print(f.read())
-f.close()
+# f = open("text.txt")
+# print(f.read(3))
+# print(f.read())
+# f.close()
 
