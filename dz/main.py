@@ -1602,4 +1602,3 @@ for i in range(len(tpl)):
 print(lst)
 for i in range(len(lst)):
     print("Количество", lst[i], "=", tpl.count(lst[i]))
-
