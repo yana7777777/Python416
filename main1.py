@@ -21,7 +21,7 @@
 # print("b: ", b)
 # # print("c: ", c)
 #
-print("Текст в локальном репозитории")
+# print("Текст в локальном репозитории")
 
 # print("Код написан на новом устройстве")
 
@@ -40,4 +40,13 @@ print("Текст в локальном репозитории")
 # print(f.read(3))
 # print(f.read())
 # f.close()
+
+# f = open("xyz.txt", "w")
+# f.write("This is line1.\nThis is line2.\nThis is line2.\n")
+# f.close()
+
+f = open("xyz.txt")
+# print(f.read())
+print(f.readline(8))
+f.close()
 

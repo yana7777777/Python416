@@ -1,0 +1,162 @@
+Win + R => cmd
+python
+
+
+1.py
+
+print("Hello")
+
+python 1.py
+
+IDLE
+
+Ctrl + / 
+- комментарий
+Ctrl + D
+- дубликат 
+
+
+Типы данных:
+
+- неизменяемые
+	str - строка
+	int - целое число
+	float - вещественное число
+	bool - булево значение (True, False)
+	tuple - кортеж ()
+	frozenset - замороженное множество
+
+- изменяемый
+	list - список []
+	set - множество {5,6,6,7}
+	dict - словарь {ключ: значение}
+
+
+import keyword
+keyword.kwlist
+
+False => "", 0, 0.0, False, None, []
+
+
+PEP20
+
+PEP8
+
+import this
+
+
+1)от 0 по 9
+2)окончания
+ворона - 1
+вороны - 2, 3, 4
+ворон - 5, 6, 7, 8, 9, 0
+
+pass
+...
+
+
+исключения - 11, 12, 13, 14
+
+копейка - 
+1, 21, 31, ..., 81, 91
+копейки - 
+22, 32
+3, 23, 33
+4, 24, 34
+копеек - 25
+
+
+
+Система контроля версий (Version Control System)
+git --version
+
+git init
+- инициализация нового репозитория
+
+git status
+- проверка статуса репозитория
+
+git add -A
+		--all
+		main.py
+		.
+- отслеживает изменения файлов
+
+git config --global user.name 'new_user'
+git config --global user.name
+
+git config --global user.email 'test@mail.ru'
+git config --global user.email
+
+git commit -m "first commit"
+- создание контрольной точки 
+
+test.txt
+
+.gitignore
+
+git add .
+
+git commit -m "added gitignore"
+
+токен
+
+Win + R => control
+
+Диспечер учетных данных
+Учетных данные для Windows
+
+https://github.com
+
+0) git status
+1) git add -A
+2) git commit -m "added print"
+3) git push
+- переносит текущий локальный коммит в удаленный репозиторий
+
+
+git branch
+- просмотр веток
+
+git branch test
+- создание ветки
+
+git branch -D test
+- удаление ветки
+
+git branch readme
+
+git checkout readme
+- перейти на ветку
+
+readme.md
+
+git checkout master
+
+master   ->    readme
+- readme.md		- readme.md
+
+
+				
+git merge readme
+- слияние веток
+
+git branch -D readme
+
+git log
+- история коммитов
+
+e4b9f916e9118b8b49282e19af62d6305efee85a
+
+
+git clone https://github.com/Helen-prog/Python416.git
+- клонирование репозитория
+
+git pull 
+- забирает изменения с удаленного репозиторий в локальный
+
+class Name:
+	- свойства, поля (переменные)
+	- методы (функции)
+	
+	атрибуты = свойства + методы
