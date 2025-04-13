@@ -3,6 +3,8 @@ import time
 
 file_path = "test\\text4.txt"
 
+# file_path = "test/text4.txt"
+
 if os.path.exists(file_path):
     directory, name = os.path.split(file_path)
     atime = os.path.getatime(file_path)
