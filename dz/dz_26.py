@@ -253,6 +253,8 @@ class Account:
 
 
 acc = Account("12345", "Долгих", 0.03, 1000)
+acc2 = Account("45689", "Иваненко", 0.02, 2000)
+acc2.print_balance()
 acc.print_balance()
 acc.print_info()
 acc.convert_to_usd()
