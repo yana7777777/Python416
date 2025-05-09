@@ -3709,7 +3709,7 @@
 # # print(os.path.isfile(r"nested1\nested2\nested3\text5.txt"))
 # # print(os.path.isdir(r"nested1\nested2\nested3"))
 #
-# file = "main.py"
+# file = "main22.py"
 #
 # print(os.path.getsize(file))  # размер файла в байтах
 # print(os.path.getatime(file))  # возвращает время последнего доступа к файлу

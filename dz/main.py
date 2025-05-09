@@ -1591,14 +1591,14 @@ from os import remove
 #         city_name, city_population = city
 #         print("\tГород: ", city_name, ", население = ", city_population, sep="")
 
-tpl = tuple(input("Введите строку: "))
-print(tpl)
-
-lst = []
-for i in range(len(tpl)):
-    if tpl[i] not in lst:
-        lst.append(tpl[i])
-
-print(lst)
-for i in range(len(lst)):
-    print("Количество", lst[i], "=", tpl.count(lst[i]))
+# tpl = tuple(input("Введите строку: "))
+# print(tpl)
+#
+# lst = []
+# for i in range(len(tpl)):
+#     if tpl[i] not in lst:
+#         lst.append(tpl[i])
+#
+# print(lst)
+# for i in range(len(lst)):
+#     print("Количество", lst[i], "=", tpl.count(lst[i]))
