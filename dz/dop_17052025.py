@@ -40,21 +40,16 @@
 # print(5 % 3 == 2)
 # print(8 % 3 == 2)
 
-a = int(input("Введите число a: "))
-b = int(input("Введите число b: "))
-c = int(input("Введите число c: "))
-d = int(input("Введите число d: "))
-
-for i in range(a, b):
-    if i % d == c:
-        print(i)
+# a = int(input("Введите число a: "))
+# b = int(input("Введите число b: "))
+# c = int(input("Введите число c: "))
+# d = int(input("Введите число d: "))
+#
+# for i in range(a, b):
+#     if i % d == c:
+#         print(i)
     # else:
     #     print("Такого число не надо выводить")
-
-
-
-
-
 
 
 # Задача 4
@@ -63,4 +58,81 @@ for i in range(a, b):
 
 
 
+
+#24/05/2025
+#Задача 1
+#По данному натуральному n вычислите сумму 1^2+2^2+...+n^2.
+
+# n = int(input("Введите натуральное число n: "))
+# summa = 0
+# for i in range(1, n+1):
+#     summa += i**2
+#     # print(i)
+#
+# print(summa)
+
+# Задача 2
+# Вычислите N! ("эн-факториал") – произведение всех натуральных чисел от 1 до N ( N!=1∙2∙3∙…∙ N ).
+
+# n = int(input("Введите натуральное число n: "))
+# result = 1
+#
+# for i in range(1, n+1):
+#     result *= i
+#     print(i)
+#
+# print(result)
+
+# Задача 3
+# Найти двойной факториал натурального числа n/
+# Двойной факториал числа n обозначается как n!!
+# и представляет собой произведение всех натуральных чисел от 1 до n той же чётности, что и число n
+
+# 1-й способ
+# n = int(input("Введите натуральное число n: "))
+# result1 = 1
+#
+# for i in range(1, n+1):
+#     if n % 2 == 0 and i % 2 == 0:
+#         result1 *= i
+#     else:
+#         if n % 2 != 0 and i % 2 != 0:
+#             result1 *= i
+#
+#     print(i)
+#
+# print(result1)
+
+# 2-й способ
+
+# n = int(input("Введите натуральное число n: "))
+# result = 1
+#
+# if n % 2 == 0:
+#     for i in range(2, n+1, 2):
+#         result *= i
+#         print(i)
+#
+# else:
+#     for i in range(1, n+1, 2):
+#         result *= i
+#         print(i)
+#
+# print("Результат: ", result)
+
+
+# print(range(5)) # возвращает генератор
+# print(list(range(5)))  # list
+
+
+#Задача 4
+#Найдите самый маленький натуральный делитель числа x, отличный от 1 (2 <= x <= 30000)
+
+# x = int(input("Введите натуральное число: "))
+#
+# print(list(range(x+1)))
+# for i in range(2, x+1):
+#     if x % i == 0:
+#         print(i)
+#         break
 
