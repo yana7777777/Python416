@@ -1,0 +1,10 @@
+{% extends 'page.html' %}
+
+{% block title %}Домашнее задание{% endblock %}
+{% block h1 %}Страница с домашним заданием{% endblock %}
+{% block content %}
+{{ super() }}
+<h1>{{ self.h1() }}</h1>
+<p>Домашнее задание выполнено</p>
+{% endblock %}
+
