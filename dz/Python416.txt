@@ -1,0 +1,389 @@
+Win + R => cmd
+python
+
+
+1.py
+
+print("Hello")
+
+python 1.py
+
+IDLE
+
+Ctrl + / 
+- комментарий
+Ctrl + D
+- дубликат 
+
+
+Типы данных:
+
+- неизменяемые
+	str - строка
+	int - целое число
+	float - вещественное число
+	bool - булево значение (True, False)
+	tuple - кортеж ()
+	frozenset - замороженное множество
+
+- изменяемый
+	list - список []
+	set - множество {5,6,6,7}
+	dict - словарь {ключ: значение}
+
+
+import keyword
+keyword.kwlist
+
+False => "", 0, 0.0, False, None, []
+
+
+PEP20
+
+PEP8
+
+import this
+
+
+1)от 0 по 9
+2)окончания
+ворона - 1
+вороны - 2, 3, 4
+ворон - 5, 6, 7, 8, 9, 0
+
+pass
+...
+
+
+исключения - 11, 12, 13, 14
+
+копейка - 
+1, 21, 31, ..., 81, 91
+копейки - 
+22, 32
+3, 23, 33
+4, 24, 34
+копеек - 25
+
+
+
+Система контроля версий (Version Control System)
+git --version
+
+git init
+- инициализация нового репозитория
+
+git status
+- проверка статуса репозитория
+
+git add -A
+		--all
+		main.py
+		.
+- отслеживает изменения файлов
+
+git config --global user.name 'new_user'
+git config --global user.name
+
+git config --global user.email 'test@mail.ru'
+git config --global user.email
+
+git commit -m "first commit"
+- создание контрольной точки 
+
+test.txt
+
+.gitignore
+
+git add .
+
+git commit -m "added gitignore"
+
+токен
+
+Win + R => control
+
+Диспечер учетных данных
+Учетных данные для Windows
+
+https://github.com
+
+0) git status
+1) git add -A
+2) git commit -m "added print"
+3) git push
+- переносит текущий локальный коммит в удаленный репозиторий
+
+
+git branch
+- просмотр веток
+
+git branch test
+- создание ветки
+
+git branch -D test
+- удаление ветки
+
+git branch readme
+
+git checkout readme
+- перейти на ветку
+
+readme.md
+
+git checkout master
+
+master   ->    readme
+- readme.md		- readme.md
+
+
+				
+git merge readme
+- слияние веток
+
+git branch -D readme
+
+git log
+- история коммитов
+
+e4b9f916e9118b8b49282e19af62d6305efee85a
+
+
+git clone https://github.com/Helen-prog/Python416.git
+- клонирование репозитория
+
+git pull 
+- забирает изменения с удаленного репозиторий в локальный
+
+class Name:
+	- свойства, поля (переменные)
+		- динамические
+		- статические
+	- методы (функции)
+		- экземпляра класса (self)
+		- статические ()  @staticmethod
+		- класса (cls)  @classmethod
+	
+	атрибуты = свойства + методы
+	
+Модификаторы доступа:
+public => self.x
+protected => self._x
+private => self.__x
+
+!5 = 1*2*3*4*5
+
+DRY (Don`t Repeat Youself) - не повторяйся
+
+- Родительский класс (Суперкласс, Базовый класс)
+
+- Дочерний класс (Подкласс, Производный класс)
+
+# Перегрузка методов
+
+# круг
+def square(val1):
+	...
+	
+
+# прямоугольник
+def square(val1, val2):
+	...
+	
+square(5)
+square(5, 7)
+
+geometry  => pip
+	rect.py
+	sq.py
+	trian.py
+
+
+import sys
+sys.path
+
+__name__
+
+rect.py => __main__
+main.py => geometry.rect
+
+car
+	__init__.py
+	carclass.py
+	electrocar.py
+	
+Упаковка данных - сохранение данные (сереализация)
+Распаковка данных - получение данных (десереализация)
+
+1. marshal (.pyc)
+2. pickle 
+3. json
+
+dump - сохраняет данные в отрытый файл
+load - считывает данные из файла
+
+dumps - сохраняет данне в строку
+loads - считывает данные из строки
+
+requests
+
+pip install requests
+
+{1: 11, 2: 8, 3: 10}
+
+CSV (Comma Separated Values) - переменные разделенные запятыми
+
+data.csv
+Имя,Профессия,Год рождения
+Виктор,Веб-дизайнер,1995
+Игорь,Программист,1983
+Роман,Администратор,1990
+
+
+Виктор;Веб-дизайнер;1995
+Игорь;Программист;1983
+Роман;Администратор;1990
+
+csv.reader => []
+csv.DictReader => {}
+
+csv.writer => []
+csv.DictWriter => {}
+
+
+pip install beautifulsoup4 или bs4
+pip install lxml
+
+https://ru.wordpress.org/plugins/browse/blocks/page/1/
+https://ru.wordpress.org/plugins/browse/blocks/page/2/
+https://ru.wordpress.org/plugins/browse/blocks/page/3/
+
+https://ru.wordpress.org/plugins/browse/blocks/page/22/
+
+MVC
+Model (модель)
+View (вид или представлени)
+Controller (контроллер)
+
+articles
+	controller.py
+	model.py
+	view.py
+	project_articles.py
+	
+{
+	"qqq": {
+		"title": "qqq",
+		"author": "www",
+		"pages": "7",
+		"description": "eee"
+	},
+	"aaa": {
+		"title": "aaa",
+		"author": "sss",
+		"pages": "5",
+		"description": "ddd"
+	}
+}
+
+templates 
+	index.html
+	blog.html
+	
+view.py
+
+
+Шаблонизатор
+Jinja
+
+pip install jinja2
+	
+
+{{ ... }} - выражение для вставки конструкции Python
+			в шаблон
+
+{% ... %} - спецификатор шаблона
+
+{% macro %} - макроопределение (функции)
+
+
+header.html
+main.html
+footer.html
+dialog.html
+
+page.html
+about.html
+
+*.db, *.sqlite
+
+SELECT [ALL | DISTINCT] {*|столбец1 [, столбец2]}
+FROM таблица1 [, таблица2]
+WHERE условие
+	=, <>, !=, <, <= , >, >=
+	AND, OR
+	поле [NOT] BETWEEN начальное_значение AND конечное_значение
+	поле [NOT] LIKE шаблон_строки
+		% - любое количество символов
+		_ - один любой символ
+	поле [NOT] GLOB регулярное_выражение
+		* - любое количество символов
+		? - один любой символ
+		[символы] - соответствует одному символу 
+					перечисленному в списке [135]
+		[начальный_символ-конечный_символ] - соответствует 
+					одному символу из заданного диапазона [a-z]
+		[^0-9] - все, кроме заданного диапазона
+	поле IS [NOT] NULL
+	поле [NOT] IN (набор_значений | выражение)
+GROUP BY (группировать по)	
+HAVING (условие)	
+ORDER BY col_name | col_number [ASC | DESC]	
+LIMIT кол-во строк [, OFFSET смещение]
+	LIMIT [смещение,] кол-во строк
+	
+	
+Логическая база данных
+Физическая база данных
+
+Декартовое произведение - все возможные комбинации каждой строки
+одной таблицы со всеми возможными комбинациями другой таблицы
+
+
+
+INSERT INTO имя_таблицы [(столбецы)]
+VALUES (значение1, значение2)
+
+
+INSERT INTO имя_таблицы [(столбецы)]
+SELECT список_столбцов
+FROM список_таблиц
+WHERE условие
+
+
+UPDATE имя_таблицы
+SET столбец1=значение1, столбец2=значение2
+[WHERE условие]
+
+
+DELETE FROM имя_таблицы
+[WHERE условие]
+
+
+Функции агрегирования
+SUM  - только с числовыми полями
+AVG  - только с числовыми полями
+COUNT
+MIN
+MAX
+
+Подзапросы
+- однострочные запросы (=, <>, <, >, >=, <=)
+- многострочные запросы (IN)
+
+Flask
+Django
+
+
+
+
