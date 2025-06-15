@@ -40,7 +40,8 @@ FROM ClientGoods
 7.	Посчитать на какую сумму было продано товара магазинам.
 
 SELECT SUM(CostUnit*Count) AS [Сумма проданного товара: ]
-FROM ClientGoods
+FROM ClientGoods, Client
+WHERE Client.Status = 'магазин'
 
 8.	Сосчитать общее количество видов закупленных фирмой вафель.
 
