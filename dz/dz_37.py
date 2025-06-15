@@ -7,6 +7,17 @@ import sqlite3
 #
 # con.close()
 
+# with sqlite3.connect("profile.db") as con:
+#     cur = con.cursor()
+#     cur.execute("""CREATE TABLE IF NOT EXISTS users(
+#     id INTEGER PRIMARY KEY AUTOINCREMENT,
+#     name TEXT NOT NULL,
+#     summa REAL,
+#     data TEXT
+#     )""")
+#     cur.execute("DROP TABLE users")
+
+
 with sqlite3.connect("profile.db") as con:
     cur = con.cursor()
     cur.execute("""CREATE TABLE IF NOT EXISTS users(
