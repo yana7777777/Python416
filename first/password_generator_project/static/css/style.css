@@ -1,0 +1,29 @@
+
+body {
+
+    background-color: rgb(244, 244, 120);
+}
+
+.container {
+    width: 400px;
+    margin: 0 auto;
+
+}
+
+.container h1{
+    text-align: center;
+}
+.container form, .container h2{
+    background: rgb(255, 179, 47);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+form input[type="checkbox"] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    color: red;
+    font-weight: bold;
+}
+

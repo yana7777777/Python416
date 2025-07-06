@@ -59,6 +59,23 @@ def add_post():
     return render_template('add_post.html', menu=dbase.get_menu())
 
 
+@app.route("/add_post2", methods=["POST", "GET"])
+def add_post2():
+    db = get_db()
+    dbase = FDataBase(db)
+
+    if request.method == "POST":
+        if len(request.form["name"]) > 4 and len(request.form["post2"]) > 10:
+            res = dbase.add_post2(request.form["name"], request.form["post2"])
+            if not res:
+                flash("Ошибка добавления статьи", category="error")
+            else:
+                flash("Статья добавлена успешно", category="success")
+        else:
+            flash("Ошибка добавления статьи", category="error")
+    return render_template('add_post2.html', menu=dbase.get_menu())
+
+
 @app.route("/about")
 def about():
     db = get_db()
@@ -70,7 +87,7 @@ def about():
 def psychology():
     db = get_db()
     dbase = FDataBase(db)
-    return render_template('psychology.html', menu=dbase.get_menu())
+    return render_template('psychology.html', menu=dbase.get_menu(), posts2=dbase.get_posts_annonce2())
 
 
 @app.route("/contact")
@@ -89,6 +106,17 @@ def show_post(id_post):
         abort(404)
 
     return render_template('post.html', menu=dbase.get_menu(), title=title, post=post)
+
+
+@app.route("/post2/<int:id_post2>")
+def show_post2(id_post2):
+    db = get_db()
+    dbase = FDataBase(db)
+    title, post2 = dbase.get_post2(id_post2)
+    if not title:
+        abort(404)
+
+    return render_template('post2.html', menu=dbase.get_menu(), title=title, post=post2)
 
 
 @app.errorhandler(404)
