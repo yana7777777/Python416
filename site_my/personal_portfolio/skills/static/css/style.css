@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+font-family: "Roboto", sans-serif;
+background: #ccccff;
+padding: 0;
+margin: 0;
+ min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f0f0f0;
+}
+
+
+.wrap{
+   
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.wrap .menu_header{
+     display: flex;
+     justify-content: space-between;
+}
+
+.block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.element, .count{
+    flex-basis: 360px;
+    background: lightyellow;
+    border: 6px solid #fff;
+    margin-bottom: 60px;
+
+}
+
+.block img{
+    max-width: 360px;
+}
+
+.text{
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    margin: 60px 0 40px;
+}
+
+h2{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.img{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.img img {
+    border: 6px solid #fff;
+}
+
+
+
+
+.blog_heading a{
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    text-align: left;
+    background:  #663366;
+}
+
+.blog{
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.count{
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.detail{
+    background: #f9f9da;
+    padding: 20px 20px 60px;
+    box-sizing: border-box;
+}
+
+.image{
+    width: 68px;
+    height: 68px;
+}
+
+.menu{
+    background: lightyellow;
+    padding: 10px;
+    border-bottom: 6px solid #fff;
+}
+
+
+.menu a{
+    color: #663366;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu ul.menu_total{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    font-size: 20px;
+
+}
+
+.menu li{
+    margin-left: 40px;
+}
+
+.menu ul.menu_second{
+
+    list-style: none;
+   	text-align: right;
+    font-size: 16px;
+    color: rgb(11, 11, 136);
+    font-weight: bold;
+
+}
+
+
+ul.menu_second li a{
+    font-size: 16px;
+    color: rgb(54, 54, 213);
+    font-weight: bold;
+
+}
+
+.wrap li.menu_login{
+    list-style: none;
+   	text-align: right;
+
+}
+
+.menu_login a{
+    padding: 4px 24px;
+    margin-top: 0;
+    background: transparent;
+    border: none;
+    color: #003366;
+    box-shadow: none;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+
+/*button.top {
+    color: #fff;
+    background: rgb(54, 54, 213);
+    padding: 5px 20px;
+    box-sizing: border-box;
+    font-weight: bold;
+}*/
+
+
+
+/*-----Авторизация----*/
+
+
+/*.content .wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}*/
+
+.content h1, .content h2{
+    color: #003366;
+}
+
+.btn{
+    background: #003366;
+    color: #fff;
+}
+
+button{
+    border-radius: 6px;
+    box-shadow: inset 0 0 6px 2px #fff;
+    padding: 10px 40px;
+    margin-top: 40px;
+    font-size: 24px;
+    cursor: pointer;
+
+}
+
+.center{
+    text-align: center;
+}
+
+form input{
+    /*width: 300px;*/
+    padding: 6px 10px;
+    box-sizing: 4px;
+    margin-bottom: 10px;
+}
+
+
+
+.top{
+    background: #663366;
+    margin: 0;
+    padding: 4px 24px;
+    margin-top: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+
+
+.bg {
+    max-width: 400px; /* Ширина формы */
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bg input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+/* Стили для плейсхолдеров */
+.bg input::placeholder {
+    color: #999;
+    opacity: 1; /* Для Firefox */
+}
+
+.bg input:-ms-input-placeholder { /* IE 10-11 */
+    color: #999;
+}
+
+.bg input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #999;
+}
+
+/* Стиль при фокусе */
+.bg input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+
+
+
