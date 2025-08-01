@@ -22,7 +22,9 @@
         <ul class="menu_total">
             <li><a href="{% url 'index' %}">Главная</a></li>
             <li><a href="{% url 'blogs' %}">Блог</a></li>
+<!--            <li><a href="{% static 'skills' %}" target="_blank">Резюме</a></li>-->
             <li><a href="{% static 'skills/resume.pdf' %}" target="_blank">Резюме</a></li>
+<!--            <li><a href="{% static 'skills' %}">Навыки</a></li>-->
         </ul>
             <ul class="menu_second">
                 <li class="logo2">Пользователь: {{ user.username }}</li>

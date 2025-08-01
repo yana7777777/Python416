@@ -5,10 +5,16 @@ font-family: "Roboto", sans-serif;
 background: #ccccff;
 padding: 0;
 margin: 0;
+ min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f0f0f0;
 }
 
+
 .wrap{
-   
+
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -65,12 +71,13 @@ h2{
 
 
 
-.top a{
+.blog_heading a{
     color: #fff;
     text-decoration: none;
     padding: 20px;
     display: block;
     text-align: left;
+    background:  #663366;
 }
 
 .blog{
@@ -114,7 +121,7 @@ h2{
     flex-wrap: wrap;
     list-style: none;
     font-size: 20px;
-   
+
 }
 
 .menu li{
@@ -122,13 +129,13 @@ h2{
 }
 
 .menu ul.menu_second{
-    
+
     list-style: none;
    	text-align: right;
     font-size: 16px;
     color: rgb(11, 11, 136);
     font-weight: bold;
-    
+
 }
 
 
@@ -136,13 +143,13 @@ ul.menu_second li a{
     font-size: 16px;
     color: rgb(54, 54, 213);
     font-weight: bold;
-    
+
 }
 
 .wrap li.menu_login{
     list-style: none;
    	text-align: right;
-    
+
 }
 
 .menu_login a{
@@ -158,26 +165,6 @@ ul.menu_second li a{
 }
 
 
-/*button.top {
-    color: #fff;
-    background: rgb(54, 54, 213);
-    padding: 5px 20px;
-    box-sizing: border-box;
-    font-weight: bold;
-}*/
-
-
- 
-/*-----Авторизация----*/
-
-
-/*.content .wrap{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-}*/
 
 .content h1, .content h2{
     color: #003366;
@@ -213,7 +200,7 @@ form input{
 
 .top{
     background: #663366;
-    margin: 0;   
+    margin: 0;
     padding: 4px 24px;
     margin-top: 0;
     background: transparent;
@@ -224,19 +211,45 @@ form input{
     line-height: 20px;
 }
 
-/*.login_form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-}*/
 
-.login_form{
-    display: block;
-    width: 400px; /* обязательно нужна ширина */
-    margin: 0 auto; /* автоматические отступы слева и справа */
+.bg {
+    max-width: 400px; /* Ширина формы */
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bg input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
 
+/* Стили для плейсхолдеров */
+.bg input::placeholder {
+    color: #999;
+    opacity: 1; /* Для Firefox */
+}
 
+.bg input:-ms-input-placeholder { /* IE 10-11 */
+    color: #999;
+}
+
+.bg input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #999;
+}
+
+/* Стиль при фокусе */
+.bg input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
