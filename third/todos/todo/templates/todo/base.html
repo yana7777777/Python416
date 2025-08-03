@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
 </head>
 <body>
 <div class="menu">
@@ -12,6 +12,7 @@
         <ul>
         {% if user.is_authenticated %}
             <li class="logo">Пользователь: {{ user.username }}</li>
+            <li><a href="{% url 'createtodo' %}">Создать</a></li>
             <li><a href="{% url 'currenttodos' %}">Актуальные</a></li>
             <li>
                 <form action="{% url 'logoutuser' %}" method="post">
@@ -19,12 +20,11 @@
                     <button class="top">Выйти</button>
                 </form>
             </li>
-
         {% else %}
             <li><a href="{% url 'signupuser' %}">Зарегистрироваться</a></li>
-            <li><a href=" ">Войти</a></li>
+            <li><a href="{% url 'loginuser' %}">Войти</a></li>
         {% endif %}
-    </ul>
+        </ul>
     </div>
 </div>
 

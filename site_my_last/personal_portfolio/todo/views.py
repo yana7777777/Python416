@@ -10,3 +10,9 @@ from todo import views
 def current_todos(request):
     todos = Todo.objects.order_by('-date')
     return render(request, 'todo/currenttodos.html', {"todos": todos})
+
+
+def todo_detail(request, todo_id):
+    todo = get_object_or_404(Todo, pk=todo_id)
+    return render(request, 'todo/tododetails.html', {'todo': todo})
+
