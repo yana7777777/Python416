@@ -82,3 +82,24 @@ def delete_todo(request, todo_pk):
         todo.delete()
         return redirect('currenttodos')
 
+
+@login_required
+def trash_bin(request):
+    delete_todos = Todo.objects.filter(user=request.user, is_deleted=True)
+    return render(request, 'todo/trashbin.html', {'delete_todos': delete_todos})
+
+
+@login_required
+def soft_delete_todo(request, todo_pk):
+    todo = get_object_or_404(Todo, pk=todo_pk, user=request.user)
+    todo.is_deleted = True
+    todo.save()
+    return redirect('currenttodos')
+
+
+@login_required
+def restore_todo(request, todo_pk):
+    todo = get_object_or_404(Todo, pk=todo_pk, user=request.user)
+    todo.is_deleted = False
+    todo.save()
+    return redirect('trashbin')

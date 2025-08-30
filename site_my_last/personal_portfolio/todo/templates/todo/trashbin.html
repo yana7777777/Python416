@@ -1,0 +1,41 @@
+{% extends 'skills/base.html' %}
+
+{% block content %}
+
+<h1 class="todo-title">Корзина</h1>
+
+    <ul class="todo-content">
+    {% for todo in delete_todos %}
+    <li>
+        <a href="{% url 'viewtodo' todo.id %}">
+            {% if todo.important %}
+            <b>{{ todo.title }}</b>
+            {% else %}
+            {{ todo.title }}
+            {% endif %}
+
+            {% if todo.memo %}
+                - {{ todo.memo }}
+            {% endif %}
+        </a>
+
+<div class="restore">
+        <form action="{% url 'restoretodo' todo.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn remove btn-restore">Восстановить</button>
+      </form>
+</div>
+        {{ todo.created|date:"d.m.Y H:i" }}
+
+        <form action="{% url 'deletetodo' todo.id %}" method="post">
+        {% csrf_token %}
+         <button class="btn remove">Удалить</button>
+        </form>
+
+    </li>
+    {% endfor %}
+
+</ul>
+    <a href="{% url 'currenttodos' %}">Вернуться к задачам</a>
+
+{% endblock %}

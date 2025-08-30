@@ -18,12 +18,16 @@
   </form>
 
 
-  <form action="{% url 'deletetodo' todo.id %}" method="post">
-    {% csrf_token %}
-    <button class="btn remove">Удалить</button>
+<!--  <form action="{% url 'deletetodo' todo.id %}" method="post">-->
+<!--    {% csrf_token %}-->
+<!--    <button class="btn remove">Удалить</button>-->
 
-  </form>
+<!--  </form>-->
 
+  <form action="{% url 'softdeletetodo' todo.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn remove">Отправить в корзину</button>
+    </form>
 
 
   </div>

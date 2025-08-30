@@ -15,9 +15,9 @@ urlpatterns = [
     path('todo/<int:todo_pk>/complete', views.complete_todo, name='completetodo'),
     path('todo/completed', views.completed_todos, name='completedtodos'),
     path('todo/<int:todo_pk>/delete', views.delete_todo, name='deletetodo'),
-    # path('trash/', views.trash_bin, name='trashbin' ),
-    # path('todo/<int:todo_pk>/softdelete', views.soft_delete_todo, name='softdeletetodo'),
-    # path('todo/<int:todo_pk>/restore', views.restore_todo, name='restoretodo'),
+    path('trash/', views.trash_bin, name='trashbin' ),
+    path('todo/<int:todo_pk>/softdelete', views.soft_delete_todo, name='softdeletetodo'),
+    path('todo/<int:todo_pk>/restore', views.restore_todo, name='restoretodo'),
 
 ]
 

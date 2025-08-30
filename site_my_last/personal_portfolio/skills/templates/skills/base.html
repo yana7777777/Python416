@@ -22,10 +22,11 @@
         <ul class="menu_total">
             <li><a href="{% url 'index' %}">Главная</a></li>
             <li><a href="{% url 'blogs' %}">Блог</a></li>
-            <li><a href="{% url 'todos' %}">Задачи</a></li>
+            <li><a href="{% url 'currenttodos' %}">Задачи</a></li>
             <li><a href="{% url 'createtodo' %}">Создать</a></li>
-            <li><a href="{% url 'currenttodos' %}">Актуальные</a></li>
+<!--            <li><a href="{% url 'currenttodos' %}">Актуальные</a></li>-->
             <li><a href="{% url 'completedtodos' %}">Выполненные</a></li>
+            <li><a href="{% url 'trashbin' %}">Корзина</a></li>
 <!--            <li><a href="{% static 'skills' %}" target="_blank">Резюме</a></li>-->
 <!--            <li><a href="{% static 'skills/resume.pdf' %}" target="_blank">Резюме</a></li>-->
 <!--            <li><a href="{% static 'skills' %}" target="_blank">Резюме</a></li>-->
