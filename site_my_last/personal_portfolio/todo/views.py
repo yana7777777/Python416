@@ -74,3 +74,11 @@ def completed_todos(request):
     todos = Todo.objects.filter(user=request.user, date_completed__isnull=False).order_by('-date_completed')
     return render(request, 'todo/completedtodos.html', {'todos': todos})
 
+
+@login_required
+def delete_todo(request, todo_pk):
+    todo = get_object_or_404(Todo, pk=todo_pk, user=request.user)
+    if request.method == "POST":
+        todo.delete()
+        return redirect('currenttodos')
+
