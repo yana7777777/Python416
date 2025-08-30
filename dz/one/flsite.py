@@ -11,9 +11,9 @@ menu = [
 
 
 @app.route("/")
-@app.route("/index")
-def index():
-    return render_template("index.html", title="Главная", menu=menu)
+@app.route("/home")
+def home():
+    return render_template("home.html", title="Главная", menu=menu)
 
 
 @app.route("/about")

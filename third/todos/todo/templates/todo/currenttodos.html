@@ -18,6 +18,7 @@
                 - {{ todo.memo }}
             {% endif %}
         </a>
+        {{ todo.created|date:"d.m.Y H:i" }}
     </li>
     {% endfor %}
 </ul>

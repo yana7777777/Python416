@@ -1,0 +1,24 @@
+{% extends 'skills/base.html' %}
+
+
+{% block content %}
+
+    <h1>Задачи</h1>
+    <h2 class="count">Задач: {{ todos.count }}</h2>
+
+
+{% for todo in todos %}
+
+<div class="element">
+    <h2 class="todo_heading">
+        <a href="{% url 'tododetail' todo.id %}">{{ todo.title }}</a>
+    </h2>
+    <div class="todo_text">
+        <h5>{{ todo.date|date:'d.m.Y' }}</h5>
+        <div>{{ todo.description|striptags|truncatechars:360 }}</div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
