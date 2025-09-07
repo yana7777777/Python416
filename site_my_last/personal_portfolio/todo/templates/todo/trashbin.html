@@ -2,11 +2,12 @@
 
 {% block content %}
 
+<div class="todo">
 <h1 class="todo-title">Корзина</h1>
 
     <ul class="todo-content">
     {% for todo in delete_todos %}
-    <li>
+    <li class="todo-element">
         <a href="{% url 'viewtodo' todo.id %}">
             {% if todo.important %}
             <b>{{ todo.title }}</b>
@@ -36,6 +37,7 @@
     {% endfor %}
 
 </ul>
+    </div>
     <a href="{% url 'currenttodos' %}">Вернуться к задачам</a>
 
 {% endblock %}

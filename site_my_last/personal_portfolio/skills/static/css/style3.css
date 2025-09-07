@@ -5,11 +5,12 @@ font-family: "Roboto", sans-serif;
 background: #ccccff;
 padding: 0;
 margin: 0;
- min-height: 100vh;
+/*min-height: 100vh;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: #f0f0f0;
+    overflow-x: hidden; /* Быстрое решение, но может скрыть проблему, а не решить её */
 }
 
 
@@ -32,13 +33,15 @@ margin: 0;
     justify-content: space-evenly;
 }
 
+
 .element, .count{
-    flex-basis: 360px;
     background: lightyellow;
     border: 6px solid #fff;
     margin-bottom: 60px;
-
+    width: 100ch;
 }
+
+
 
 .block img{
     max-width: 360px;
@@ -53,6 +56,7 @@ h1{
     text-align: center;
     margin: 60px 0 40px;
 }
+
 
 h2{
     text-align: center;
@@ -257,6 +261,25 @@ form input{
 
 /*** добавляю 30.08.2025 ****/
 
+/*body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}*/
+
+/*.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 30px;
+    box-sizing: border-box;
+}*/
+
+/*.menu{
+    background: #003366;
+    box-shadow: 0 2px 12px 2px #003366;
+}*/
+
 .menu{
     background: #2a639d;
     box-shadow: 0 2px 5px 2px #2a639d;
@@ -361,13 +384,19 @@ a b {
     color: orangered;
 }
 
+/*.btn{
+    display: flex;
+    align-items: flex-start; /* Прижимаем к верху */
+    /*height: 100%; /* Занимает всю высоту родителя */
+    /*box-shadow: inset 0 0 6px 2px orangered;
+}*/
 
 .restore form {
     margin: 0; /* Убираем отступы у формы */
 }
 
 .btn-restore {
-    margin: 0; /* Убираем отступы у кнопки */
+    margin-top: 50px; /* Убираем отступы у кнопки */
     /* Остальные стили кнопки */
     outline: none;
     border: none;
@@ -411,6 +440,44 @@ a b {
     opacity: 0.7;
 }
 
+/*********** КОНЕЦ ***************/
+
+/********07/09/2025*******/
+
+.element, .count{
+    background: lightyellow;
+    border: 6px solid #fff;
+    margin-bottom: 60px;
+
+}
+
+
+.todo-element{
+
+    width:100ch;
+    display:flex;
+
+}
+
+
+
+button.remove{
+    margin-top: 50px;
+    margin-left: 120px; /* прижимает вправо */
+    opacity: 0.5;
+}
+
+button.btn-restore{
+    margin-left: 220px;
+}
+
+.remove:hover{
+    opacity: 1; /* При наведении становится полностью видимой */
+}
+
+.el{
+    opacity: 0.3;
+}
 
 
 
