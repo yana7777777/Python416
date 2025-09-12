@@ -1,0 +1,33 @@
+{% extends 'skills/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Результаты анализа: {{ document.title }}</h2>
+    
+    <div class="card">
+        <div class="card-header">
+            Финансовые коэффициенты
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Коэффициент</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ratio in ratios %}
+                    <tr>
+                        <td>{{ ratio.ratio_name }}</td>
+                        <td>{{ ratio.ratio_value }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <a href="{% url 'financial_upload' %}" class="btn btn-secondary mt-3">Загрузить другой документ</a>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'skills/base.html' %}
+
+{% block content %}
+
+<h1>Выполнены:</h1>
+
+<ul>
+    {% for todo in todos %}
+    <li class="element el">
+        <a href="{% url 'viewtodo' todo.id %}">
+            {% if todo.important %}
+            <b>{{ todo.title }}</b>
+            {% else %}
+            {{ todo.title }}
+            {% endif %}
+
+            {% if todo.memo %}
+                - {{ todo.memo }}
+            {% endif %}
+        </a>
+
+        {{ todo.date_completed|date:"d.m.Y H:i" }}
+
+
+
+    </li>
+    {% endfor %}
+</ul>
+
+
+
+<ul class="todo-content">
+    {% for todo in delete_todos %}
+    <li>
+        <a href="{% url 'viewtodo' todo.id %}">
+            {% if todo.important %}
+            <b>{{ todo.title }}</b>
+            {% else %}
+            {{ todo.title }}
+            {% endif %}
+
+            {% if todo.memo %}
+                - {{ todo.memo }}
+            {% endif %}
+        </a>
+
+<div class="restore">
+        <form action="{% url 'restoretodo' todo.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn remove btn-restore">Восстановить</button>
+      </form>
+</div>
+        {{ todo.created|date:"d.m.Y H:i" }}
+
+    </li>
+    {% endfor %}
+
+</ul>
+
+
+{% endblock %}
