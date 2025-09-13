@@ -1,73 +1,67 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Финансовая аналитика</title>
     <link rel="stylesheet" href="{% static 'css/style3.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'skills/favicon.ico '%}"
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="{% static 'skills/favicon.ico' %}">
 
+    </head>
+<body>
 
 <div class="menu">
     <div class="wrap">
         <div class="menu_header">
-        {% if user.is_authenticated %}
-        <div class="logo">
+            {% if user.is_authenticated %}
+            <div class="logo">
                 <a href="{% url 'index' %}">
-                <img src="{% static 'skills/logo.png' %}" alt="" class="image">
-            </a>
-        </div>
-        <ul class="menu_total">
-            <li><a href="{% url 'index' %}">Анализ</a></li>
-            <li><a href="{% url 'blogs' %}">Блог</a></li>
-            <li><a href="{% url 'currenttodos' %}">Задачи</a></li>
-            <li><a href="{% url 'createtodo' %}">Создать</a></li>
-<!--            <li><a href="{% url 'currenttodos' %}">Актуальные</a></li>-->
-            <li><a href="{% url 'completedtodos' %}">Выполненные</a></li>
-            <li><a href="{% url 'trashbin' %}">Корзина</a></li>
-<!--            <li><a href="{% static 'skills' %}" target="_blank">Резюме</a></li>-->
-<!--            <li><a href="{% static 'skills/resume.pdf' %}" target="_blank">Резюме</a></li>-->
-<!--            <li><a href="{% static 'skills' %}" target="_blank">Резюме</a></li>-->
-<!--            <li><a href="{% static 'skills' %}">Навыки</a></li>-->
-        </ul>
-            <ul class="menu_second">
-                <li class="logo2">Пользователь: {{ user.username }}</li>
+                    <img src="{% static 'skills/logo.png' %}" alt="Логотип" class="image">
+                </a>
+            </div>
 
+            <!-- Бургер меню для мобильных -->
+            <div class="burger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="menu_total" id="mainMenu">
+                <li><a href="{% url 'index' %}">🏠 Главная</a></li>
+                <li><a href="{% url 'financial_analysis_page' %}">📊 Финансы</a></li>
+                <li><a href="{% url 'blogs' %}">📝 Блог</a></li>
+                <li><a href="{% url 'currenttodos' %}">✅ Задачи</a></li>
+                <li><a href="{% url 'createtodo' %}">🆕 Создать</a></li>
+                <li><a href="{% url 'completedtodos' %}">🎯 Выполненные</a></li>
+                <li><a href="{% url 'trashbin' %}">🗑️ Корзина</a></li>
+            </ul>
+
+            <ul class="menu_second">
+                <li class="logo2">👤 {{ user.username }}</li>
                 <li>
                     <form action="{% url 'logoutuser' %}" method="post">
                         {% csrf_token %}
-                        <button class="top">Выйти</button>
+                        <button class="top">🚪 Выйти</button>
                     </form>
                 </li>
-                {% else %}
-                <li class="menu_login"><a href="{% url 'signupuser' %}">Зарегистрироваться</a></li>
-                <li class="menu_login"><a href="{% url 'loginuser' %}">Вoйти</a></li>
-                {% endif %}
             </ul>
-        </div>
+            {% else %}
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'skills/logo.png' %}" alt="Логотип" class="image">
+                </a>
+            </div>
 
+            <ul class="menu_second">
+                <li class="menu_login"><a href="{% url 'signupuser' %}">📝 Зарегистрироваться</a></li>
+                <li class="menu_login"><a href="{% url 'loginuser' %}">🔑 Войти</a></li>
+            </ul>
+            {% endif %}
+        </div>
     </div>
 </div>
-
-
-
-
-<!--<div class="menu">-->
-<!--    <div class="wrap">-->
-<!--        <ul>-->
-<!--            {% if user.is_authenticated %}-->
-<!--        <li class="logo">Пользователь: {{ user.username }}</li>-->
-<!--            <li><a href="{% url 'index' %}">Главная</a></li>-->
-<!--             <li><a href="{% url 'blogs' %}">Блок</a></li>-->
-<!--            <li><a href="">Выйти</a></li>-->
-<!--            {% else %}-->
-
-<!--            {% endif %}-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</div>-->
 
 <div class="content">
     <div class="wrap">
@@ -75,6 +69,37 @@
         {% endblock %}
     </div>
 </div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mainMenu');
+        menu.classList.toggle('show');
+    }
+
+    // Закрытие меню при клике outside
+    document.addEventListener('click', function(event) {
+        const menu = document.getElementById('mainMenu');
+        const burger = document.querySelector('.burger-menu');
+
+        if (!menu.contains(event.target) && !burger.contains(event.target)) {
+            menu.classList.remove('show');
+        }
+    });
+
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

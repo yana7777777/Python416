@@ -28,6 +28,7 @@ urlpatterns = [
     path('', include('skills.urls')),
     path('blog/', include('blog.urls')),
     path('todo/', include('todo.urls')),
+    path('finance/', include('financial_analysis.urls')),  # Добавляем новые URLs
 
     # Todos (постановка заадч)
     path('current/', views.current_todos, name="currenttodos"),

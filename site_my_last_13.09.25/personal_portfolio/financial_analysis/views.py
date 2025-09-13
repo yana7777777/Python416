@@ -320,15 +320,3 @@ def extract_profit_value(text, line_name, code):
         except ValueError:
             return None
     return None
-
-
-def financial_analysis_page(request):
-    """Отдельная страница финансового анализа"""
-    # Получаем последние документы пользователя (если авторизован)
-    recent_docs = []
-    if request.user.is_authenticated:
-        recent_docs = FinancialDocument.objects.filter(user=request.user).order_by('-upload_date')[:3]
-
-    return render(request, 'financial_analysis/financial_analysis.html', {
-        'recent_docs': recent_docs
-    })
