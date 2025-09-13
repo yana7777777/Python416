@@ -9,6 +9,7 @@ from .forms import TodoForm
 from .models import Todo
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 
 def home(request):
@@ -63,10 +64,14 @@ def view_todo(request, todo_pk):
 @login_required
 def complete_todo(request, todo_pk):
     todo = get_object_or_404(Todo, pk=todo_pk, user=request.user)
-    if request.method == "POST":
-        todo.date_completed = timezone.now()
+
+    if request.method == 'POST':
+        todo.completed = True
         todo.save()
-        return redirect('currenttodos')
+        return redirect('currenttodos')  # ВАЖНО: всегда возвращать redirect или HttpResponse
+
+    # Если метод не POST, тоже возвращаем редирект
+    return redirect('currenttodos')
 
 
 @login_required

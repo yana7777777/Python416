@@ -1401,6 +1401,603 @@ button.btn-restore{
         }
 
 
+ /***************БЛОГ добавляю 13.09.2025*******************/
+
+                
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Заголовок */
+.blog-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.blog-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.blog-count {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 8px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+/* Сетка постов */
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Карточка блога */
+.blog-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e8f4f8;
+    position: relative;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    padding: 30px 30px 20px 30px;
+    border-bottom: 2px solid #f1f3f4;
+}
+
+.blog-card-title {
+    margin-bottom: 15px;
+}
+
+.blog-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    line-height: 1.4;
+}
+
+.blog-link:hover {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.blog-date {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Контент блога */
+.blog-content {
+    padding: 25px 30px;
+}
+
+.blog-description {
+    color: #5a6c7d;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+/* Кнопки действий */
+.card-actions {
+    padding: 0 30px 30px 30px;
+    text-align: center;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.read-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+/* Состояние без постов */
+.no-blogs {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 60px 40px;
+    border-radius: 20px;
+    border: 2px dashed #dee2e6;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.empty-state h3 {
+    color: #6c757d;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.empty-state p {
+    color: #8a8d93;
+    font-size: 1.1rem;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.blog-card:nth-child(1) { animation-delay: 0.1s; }
+.blog-card:nth-child(2) { animation-delay: 0.2s; }
+.blog-card:nth-child(3) { animation-delay: 0.3s; }
+.blog-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .blog-container {
+        padding: 20px 15px;
+    }
     
+    .blog-title {
+        font-size: 2.2rem;
+    }
+    
+    .blogs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card-header,
+    .blog-content,
+    .card-actions {
+        padding: 20px;
+    }
+    
+    .blog-link {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-title {
+        font-size: 1.8rem;
+    }
+    
+    .blog-count {
+        font-size: 1rem;
+    }
+    
+    .empty-state {
+        padding: 40px 20px;
+    }
+    
+    .empty-icon {
+        font-size: 3rem;
+    }
+}
+
+/* Декоративные элементы */
+.blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blog-card:hover::before {
+    opacity: 1;
+}
+
+/* Эффект для счетчика постов */
+.blog-count {
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-count::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.blog-count:hover::before {
+    left: 100%;
+}
+
+
+/**************ДОБАВЛЯЮ в TODO*************/
+
+
+.todos-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Заголовок */
+.todos-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.todos-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.todos-count {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 6px 15px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+/* Кнопки действий */
+.todos-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.create-btn {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+}
+
+.create-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.completed-btn {
+    background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%);
+    color: white;
+}
+
+.completed-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(23, 162, 184, 0.3);
+}
+
+/* Список задач в строках */
+.todos-list {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.todo-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    border-bottom: 1px solid #f1f3f4;
+    transition: background-color 0.3s ease;
+}
+
+.todo-row:hover {
+    background-color: #f8f9fa;
+}
+
+.todo-row:last-child {
+    border-bottom: none;
+}
+
+.todo-important {
+    background: linear-gradient(90deg, #fff3cd 0%, transparent 100%);
+    border-left: 4px solid #ffc107;
+}
+
+.todo-completed {
+    opacity: 0.7;
+    background-color: #f8f9fa;
+}
+
+.todo-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.todo-main {
+    margin-bottom: 8px;
+}
+
+.todo-title {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+}
+
+.todo-link {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.todo-link:hover {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.todo-memo {
+    color: #6c757d;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.todo-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.todo-date {
+    color: #667eea;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.todo-status {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.todo-status.completed {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.todo-status.pending {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+/* Действия с задачами */
+.todo-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.todo-form {
+    margin: 0;
+}
+
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-btn {
+    background: #17a2b8;
+    color: white;
+}
+
+.view-btn:hover {
+    background: #138496;
+    transform: translateY(-2px);
+}
+
+.complete-btn {
+    background: #28a745;
+    color: white;
+}
+
+.complete-btn:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Состояние без задач */
+.no-todos {
+    text-align: center;
+    padding: 50px 30px;
+}
+
+.empty-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.no-todos h3 {
+    color: #6c757d;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.no-todos p {
+    color: #8a8d93;
+    margin-bottom: 25px;
+}
+
+.empty-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Кнопка корзины */
+.trash-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.trash-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    background: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.trash-btn:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .todos-container {
+        padding: 20px 15px;
+    }
+    
+    .todos-title {
+        font-size: 2rem;
+    }
+    
+    .todo-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .todo-actions {
+        justify-content: center;
+    }
+    
+    .todos-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    
+    .empty-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .todos-title {
+        font-size: 1.8rem;
+    }
+    
+    .todo-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .btn {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
 
 
