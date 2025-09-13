@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
+from financial_analysis.models import FinancialDocument
 from todo import views
 from . import views
 
@@ -27,7 +28,20 @@ def signup_user(request):
 
 def index(request):
     projects = Skills.objects.all()
-    return render(request, 'skills/index.html', {'projects': projects})
+
+    # Создаем context с вашими проектами
+    context = {
+        'projects': projects,
+    }
+
+    # Добавляем финансовые документы для авторизованных пользователей
+    if request.user.is_authenticated:
+        recent_docs = FinancialDocument.objects.filter(user=request.user).order_by('-upload_date')[:3]
+        context['recent_financial_docs'] = recent_docs
+    else:
+        context['recent_financial_docs'] = []
+
+    return render(request, 'skills/index.html', context)
 
 
 def logout_user(request):
