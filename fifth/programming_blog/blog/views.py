@@ -5,8 +5,8 @@ from .models import *
 
 
 class BlogHome(ListView):
-    # model = Blog
+    model = Blog
     template_name = "blog/index.html"
-    # context_object_name = "posts"
+    context_object_name = "posts"
 
 
